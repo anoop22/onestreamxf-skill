@@ -5,16 +5,16 @@ A modular skill package that helps AI agents answer OneStream XF questions from 
 ## Public References
 
 **Official first:**
-- OneStream Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
-- OneStream Dashboards: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html`
-- OneStream Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
-- OneStream Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
-- OneStream API Overview Guide: `https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf`
+- [OneStream Cube Views](https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html)
+- [OneStream Dashboards](https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html)
+- [OneStream Cubes](https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html)
+- [OneStream Business Rule Types](https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types)
+- [OneStream API Overview Guide](https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf)
 
 **Supplemental public examples:**
-- OneStream Community: Cube View Style Parameters: `https://community.onestreamsoftware.com/blog/blog/cube-view-style-parameters/1686`
-- MindStream Analytics: OneStream Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
-- Perficient: Building Basic Dashboards in OneStream XF: `https://blogs.perficient.com/2020/02/26/building-basic-dashboards-in-onestream-xf/`
+- [OneStream Community: Cube View Style Parameters](https://community.onestreamsoftware.com/blog/blog/cube-view-style-parameters/1686)
+- [MindStream Analytics: OneStream Linked Cube Views Overview](https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html)
+- [Perficient: Building Basic Dashboards in OneStream XF](https://blogs.perficient.com/2020/02/26/building-basic-dashboards-in-onestream-xf/)
 
 ## What This Skill Does
 

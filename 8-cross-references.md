@@ -7,15 +7,15 @@ Use this module when source lookup returns scattered results or when the query s
 ## Public References
 
 **Official first:**
-- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
-- Dashboards: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html`
-- Data Units: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Workflow%20Guides/Data%20Units.html`
-- Workflow Channels: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Workflow/NoDataLockCombo.html`
-- Data Access / Slice Security: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Cube/Data%20Access.html`
+- [Cube Views](https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html)
+- [Dashboards](https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html)
+- [Data Units](https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Workflow%20Guides/Data%20Units.html)
+- [Workflow Channels](https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Workflow/NoDataLockCombo.html)
+- [Data Access / Slice Security](https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Cube/Data%20Access.html)
 
 **Supplemental public examples:**
-- MindStream Analytics: Linking Cube Views on a Dashboard: `https://www.mindstreamanalytics.com/blog/onestream-linking-cube-views-dashboard.html`
-- Perficient: Linked Cube Views and Drill Down: `https://blogs.perficient.com/2023/03/21/linked-cube-views-in-onestream-and-drilling-down-to-source-data/`
+- [MindStream Analytics: Linking Cube Views on a Dashboard](https://www.mindstreamanalytics.com/blog/onestream-linking-cube-views-dashboard.html)
+- [Perficient: Linked Cube Views and Drill Down](https://blogs.perficient.com/2023/03/21/linked-cube-views-in-onestream-and-drilling-down-to-source-data/)
 
 ---
 

@@ -7,16 +7,16 @@
 ## Public References
 
 **Official first:**
-- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
-- Dashboards: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html`
-- Parameters: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Parameter%20Guides/use-case-examples.html`
-- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
-- API Overview Guide: `https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf`
+- [Cube Views](https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html)
+- [Dashboards](https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html)
+- [Parameters](https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Parameter%20Guides/use-case-examples.html)
+- [Business Rule Types](https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types)
+- [API Overview Guide](https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf)
 
 **Supplemental public examples:**
-- OneStream Community: Cube View Style Parameters: `https://community.onestreamsoftware.com/blog/blog/cube-view-style-parameters/1686`
-- OneStream Community: FdxExecuteCubeView parameters: `https://community.onestreamsoftware.com/discussions/WorkflowDI/fdxexecutecubeview-parameters/13514`
-- Perficient: Dynamic Cube View and Dashboard Parameters: `https://blogs.perficient.com/2022/11/02/onestream-a-simple-guide-to-building-reports-and-dashboards-part-2-of-3-2/`
+- [OneStream Community: Cube View Style Parameters](https://community.onestreamsoftware.com/blog/blog/cube-view-style-parameters/1686)
+- [OneStream Community: FdxExecuteCubeView parameters](https://community.onestreamsoftware.com/discussions/WorkflowDI/fdxexecutecubeview-parameters/13514)
+- [Perficient: Dynamic Cube View and Dashboard Parameters](https://blogs.perficient.com/2022/11/02/onestream-a-simple-guide-to-building-reports-and-dashboards-part-2-of-3-2/)
 
 ---
 
