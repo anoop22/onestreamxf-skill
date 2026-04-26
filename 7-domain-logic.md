@@ -4,6 +4,19 @@
 
 These are not replacement documentation. They are guardrails that keep an agent from making common OneStream mistakes.
 
+## Public References
+
+**Official first:**
+- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+- Dashboards: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Presentation%20Guides/Dashboards.html`
+- Data Access / Slice Security: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Cube/Data%20Access.html`
+- BRApi: `https://documentation.onestream.com/1388457/Content/Design%20and%20Reference/Foundation%20Guides/BRApi.html`
+- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+
+**Supplemental public examples:**
+- OneStream Community: FdxExecuteCubeView parameters: `https://community.onestreamsoftware.com/discussions/WorkflowDI/fdxexecutecubeview-parameters/13514`
+- MindStream Analytics: Conditional Cell Formatting with XFBR: `https://www.mindstreamanalytics.com/blog/onestream-cube-view-multi-column-conditional-variance-formatting.html`
+
 ---
 
 ## Presentation and Data Entry
@@ -138,4 +151,3 @@ If the question is "why doesn't it consolidate?", check whether the logic partic
 - UI labels and navigation can change by version: answer with concept plus likely path.
 - Public examples may omit security, workflow, or scenario/time context: add those caveats.
 - If sources disagree, prefer official docs and label community content as illustrative.
-

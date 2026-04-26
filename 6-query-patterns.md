@@ -4,6 +4,20 @@
 
 Use this module after `0-quick-reference.md` when the query is complex, code-heavy, ambiguous, or troubleshooting-oriented.
 
+## Public References
+
+**Official first:**
+- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+- Cube View General Settings: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/General%20Settings.html`
+- Parameters: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Parameter%20Guides/use-case-examples.html`
+- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+- API Overview Guide: `https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf`
+
+**Supplemental public examples:**
+- OneStream Community: FdxExecuteCubeView parameters: `https://community.onestreamsoftware.com/discussions/WorkflowDI/fdxexecutecubeview-parameters/13514`
+- Perficient: Dynamic Cube View and Dashboard Parameters: `https://blogs.perficient.com/2022/11/02/onestream-a-simple-guide-to-building-reports-and-dashboards-part-2-of-3-2/`
+- MindStream Analytics: Linking Cube Views on a Dashboard: `https://www.mindstreamanalytics.com/blog/onestream-linking-cube-views-dashboard.html`
+
 ---
 
 ## Pattern Table

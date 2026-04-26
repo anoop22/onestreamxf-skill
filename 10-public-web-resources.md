@@ -4,6 +4,19 @@
 
 Use official OneStream sources first. Use community or partner material only as secondary evidence.
 
+## Public References
+
+**Official first:**
+- OneStream Documentation: `https://documentation.onestream.com/`
+- OneStream Developer Portal: `https://dev.onestream.com/docs/`
+- OneStream API Overview Guide: `https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf`
+
+**Supplemental public examples:**
+- OneStream Community Blog: `https://community.onestreamsoftware.com/category/top/blog/blog`
+- OneStream Community parameter discussions: `https://community.onestreamsoftware.com/tag/parameters`
+- MindStream Analytics OneStream articles: `https://www.mindstreamanalytics.com/blog`
+- Perficient OneStream articles: `https://blogs.perficient.com/tag/onestream/`
+
 ---
 
 ## Source Priority
@@ -49,6 +62,26 @@ Use these pages as starting points for developer and Business Rule questions:
 - Solution Core Requirements: `https://dev.onestream.com/docs/solution-exchange/solution-creation/core-requirements`
 
 Developer portal pages often describe standards and patterns rather than complete API signatures. For exact signatures, prefer API reference material when available.
+
+---
+
+## Supplemental Public Examples Map
+
+Use these after official sources, mainly to understand implementation patterns or common edge cases:
+
+- OneStream Community: Cube View Style Parameters: `https://community.onestreamsoftware.com/blog/blog/cube-view-style-parameters/1686`
+- OneStream Community: Cube views and Parameters discussion: `https://community.onestreamsoftware.com/discussions/WorkflowDI/cube-views-and-parameters/27904`
+- OneStream Community: FdxExecuteCubeView parameters discussion: `https://community.onestreamsoftware.com/discussions/WorkflowDI/fdxexecutecubeview-parameters/13514`
+- OneStream Community: parameter tag discussions: `https://community.onestreamsoftware.com/tag/parameters`
+- MindStream Analytics: OneStream Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
+- MindStream Analytics: Linking Cube Views on a Dashboard: `https://www.mindstreamanalytics.com/blog/onestream-linking-cube-views-dashboard.html`
+- MindStream Analytics: Cube View dashboard navigation: `https://www.mindstreamanalytics.com/blog/onestream-cube-view-right-click-dashboard-navigation.html`
+- MindStream Analytics: Conditional Cube View formatting with XFBR: `https://www.mindstreamanalytics.com/blog/onestream-cube-view-multi-column-conditional-variance-formatting.html`
+- Perficient: Building Basic Dashboards in OneStream XF: `https://blogs.perficient.com/2020/02/26/building-basic-dashboards-in-onestream-xf/`
+- Perficient: Dynamic Cube View and Dashboard Parameters: `https://blogs.perficient.com/2022/11/02/onestream-a-simple-guide-to-building-reports-and-dashboards-part-2-of-3-2/`
+- Perficient: Linked Cube Views and Drill Down: `https://blogs.perficient.com/2023/03/21/linked-cube-views-in-onestream-and-drilling-down-to-source-data/`
+
+Treat these as illustrative, not authoritative. Confirm exact behavior against official OneStream documentation or the user's OneStream version.
 
 ---
 

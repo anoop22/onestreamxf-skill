@@ -4,6 +4,20 @@
 
 This skill gives AI agents practical domain intelligence for OneStream XF. It helps an agent decide which OneStream reference documents to consult, which concepts to keep together, and how to avoid common terminology traps.
 
+## Public References
+
+**Official first:**
+- OneStream Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+- OneStream Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
+- OneStream Dimensions Overview: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Dimensions%20Overview.html`
+- OneStream Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+- OneStream API Overview Guide: `https://documentation.onestream.com/1384528/Content/PDFs/API_Overview_Guide.pdf`
+
+**Supplemental public examples:**
+- OneStream Community blog: Cube View Style Parameters: `https://community.onestreamsoftware.com/blog/blog/cube-view-style-parameters/1686`
+- MindStream Analytics: OneStream Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
+- Perficient: Building Reports and Dashboards with Parameters: `https://blogs.perficient.com/2022/11/02/onestream-a-simple-guide-to-building-reports-and-dashboards-part-2-of-3-2/`
+
 ## What This Skill Does
 
 **Solves the OneStream Context Problem:**

@@ -4,6 +4,20 @@
 
 **This is the master ruleset.** Use after quick-reference for complex queries requiring full rule application.
 
+## Public References
+
+**Official first:**
+- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+- Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
+- Data Units: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Workflow%20Guides/Data%20Units.html`
+- Data Access / Slice Security: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Cube/Data%20Access.html`
+- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+
+**Supplemental public examples:**
+- OneStream Community: FdxExecuteCubeView parameters: `https://community.onestreamsoftware.com/discussions/WorkflowDI/fdxexecutecubeview-parameters/13514`
+- OneStream Community: Parameter tag discussions: `https://community.onestreamsoftware.com/tag/parameters`
+- MindStream Analytics: Cube View dashboard navigation: `https://www.mindstreamanalytics.com/blog/onestream-cube-view-right-click-dashboard-navigation.html`
+
 ---
 
 ## Source Hierarchy

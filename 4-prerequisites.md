@@ -4,6 +4,19 @@
 
 **Critical:** Prevents providing advanced documentation without foundational context.
 
+## Public References
+
+**Official first:**
+- Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
+- Dimensions Overview: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Dimensions%20Overview.html`
+- Configurable Dimensions: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube/Configurable%20Dimensions.html`
+- Data Units: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Workflow%20Guides/Data%20Units.html`
+- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+
+**Supplemental public examples:**
+- OneStream Community blog: `https://community.onestreamsoftware.com/category/top/blog/blog`
+- MindStream Analytics: Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
+
 ---
 
 ## The 6-Tier Knowledge Hierarchy

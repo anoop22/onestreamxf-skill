@@ -4,6 +4,19 @@
 
 **Critical Rule:** These terms have specific meanings when together. Splitting them causes concept confusion.
 
+## Public References
+
+**Official first:**
+- Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
+- Dimensions Overview: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Dimensions%20Overview.html`
+- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+- Member Script Constants: `https://documentation.onestream.com/8.5.1/Content/Design%20and%20Reference/Cube/Member%20Script%20Constants.html`
+- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+
+**Supplemental public examples:**
+- MindStream Analytics: Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
+- Perficient: Utilizing Linked Cube Views: `https://blogs.perficient.com/2019/04/30/utilizing-the-power-of-linked-cube-views-in-onestream-xf/`
+
 ---
 
 ## Core Compound Terms

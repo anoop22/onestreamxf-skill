@@ -4,6 +4,19 @@
 
 Use this module when the user asks architectural, design, "how does this fit together", or multi-layer questions.
 
+## Public References
+
+**Official first:**
+- Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
+- Dimensions Overview: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Dimensions%20Overview.html`
+- Data Units: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Workflow%20Guides/Data%20Units.html`
+- Cube Views: `https://documentation.onestream.com/docs/Content/Design%20and%20Reference/Cube%20Views/Build%20Reports%20through%20Cube%20Views.html`
+- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+
+**Supplemental public examples:**
+- MindStream Analytics: Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
+- Perficient: Linked Cube Views and Drill Down: `https://blogs.perficient.com/2023/03/21/linked-cube-views-in-onestream-and-drilling-down-to-source-data/`
+
 ---
 
 ## The Minimum Mental Model
@@ -122,4 +135,3 @@ For OneStream answers, a good response usually includes:
 - The configuration path or code pattern if the user asked "how".
 - A validation checklist for troubleshooting questions.
 - Source/version caveats when using public web material.
-

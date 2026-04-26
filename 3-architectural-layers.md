@@ -4,6 +4,19 @@
 
 **Critical:** Understanding layer boundaries prevents mixing unrelated concepts during retrieval.
 
+## Public References
+
+**Official first:**
+- Cubes: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Cubes.html`
+- Dimensions Overview: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Cube/Dimensions%20Overview.html`
+- Data Units: `https://documentation.onestream.com/8.4.0/Content/Design%20and%20Reference/Workflow%20Guides/Data%20Units.html`
+- Workflow Channels: `https://documentation.onestream.com/1389761/Content/Design%20and%20Reference/Workflow/NoDataLockCombo.html`
+- Business Rule Types: `https://dev.onestream.com/docs/solution-exchange/dev-standards/components/business-rule-types`
+
+**Supplemental public examples:**
+- MindStream Analytics: Linked Cube Views Overview: `https://www.mindstreamanalytics.com/blog/onestream-linked-cube-views-overview.html`
+- OneStream Community: About Advanced Reporting and Dashboards: `https://community.onestreamsoftware.com/kb/onestream-press-excerpts/about-advanced-reporting-and-dashboards/45613`
+
 ---
 
 ## The 7 Functional Layers
