@@ -1,15 +1,15 @@
 # OneStream XF Domain Intelligence Skill
 
-A modular skill package that transforms OneStream RAG agents from keyword matchers into domain experts.
+A modular skill package that helps AI agents answer OneStream XF questions from OneStream reference documents with better domain judgement.
 
 ## What This Skill Does
 
-**Solves the Core RAG Intelligence Problem:**
-- ❌ Without this skill: "Cube View performance" retrieves general "Cube" documentation
-- ✅ With this skill: Retrieves only Cube View docs + excludes "Cube" + includes Member Filters/Parameters
+**Solves the Core OneStream Context Problem:**
+- Without this skill: "Cube View performance" can drift into general "Cube" documentation
+- With this skill: The agent keeps Cube View context focused and includes Member Filters, Parameters, POV, and suppression when relevant
 
 **Key Capabilities:**
-1. **Prevents semantic confusion** (45+ compound terms that shouldn't split)
+1. **Prevents concept confusion** (45+ compound terms that shouldn't split)
 2. **Disambiguates overloaded terminology** (View, Profile, Rule, Consolidation, etc.)
 3. **Respects architectural boundaries** (7 layers with interaction rules)
 4. **Includes prerequisites automatically** (6-tier knowledge hierarchy)
@@ -23,10 +23,10 @@ A modular skill package that transforms OneStream RAG agents from keyword matche
 3. Name it "onestream-intelligence"
 4. Enable for all OneStream sub-agents
 
-### For Custom RAG Systems
-1. Index all `.md` files in your vector database
-2. Tag them with `skill:onestream-intelligence`
-3. Reference in agent prompts when processing OneStream queries
+### For Any AI Agent
+1. Add this folder as an available skill or instruction bundle
+2. Ensure the agent can consult OneStream reference documents or official public sources
+3. Tell the agent to start with `SKILL.md` for OneStream questions
 
 ## Package Structure
 
@@ -125,7 +125,7 @@ Query: "Why isn't my Extensible Dimensionality consolidating?"
 
 ### 2-compound-terms.md - Atomic Terms
 **Purpose:** Defines 45+ terms that must be treated as atomic units
-**Use when:** Processing any query (prevent semantic splitting)
+**Use when:** Processing any query (prevent concept splitting)
 **Key concepts:** "Cube View" ≠ "Cube", "Workflow Profile" ≠ "Profile"
 **Footprint:** Small
 
@@ -209,7 +209,7 @@ Result: Multi-layer retrieval, common causes prioritized, design patterns includ
 
 ## Integration Examples
 
-### With Agentic Retrieval
+### With An Agent Prompt
 ```python
 # In your agent prompt
 """
@@ -218,23 +218,13 @@ When processing OneStream queries:
 2. Detect pattern type and ambiguous terms
 3. Apply fast disambiguation and inclusion/exclusion rules
 4. If complex, load specialized modules as needed
-5. Apply rules before returning semantic search results
+5. Consult OneStream reference documents, then apply the rules before answering
 """
 ```
 
-### With LangChain
+### With A Document-Aware Agent
 ```python
-from langchain.retrievers import ContextualCompressionRetriever
-
-# Add skill context to retrieval
-skill_context = load_skill_module("0-quick-reference.md")
-query_with_skill = f"{skill_context}\n\nQuery: {user_query}"
-results = retriever.get_relevant_documents(query_with_skill)
-```
-
-### With Custom RAG
-```python
-def intelligent_onestream_retrieval(query):
+def answer_onestream_question(query):
     # Phase 1: Pattern detection
     skill_ref = load_skill("0-quick-reference.md")
     pattern = detect_pattern(query, skill_ref)
@@ -246,22 +236,22 @@ def intelligent_onestream_retrieval(query):
     else:
         resolved = query
     
-    # Phase 3: Retrieval
-    results = search_available_docs_or_official_web(resolved)
+    # Phase 3: Consult OneStream references
+    results = consult_onestream_reference_docs(resolved)
     
     # Phase 4: Apply rules
     results = apply_inclusion_rules(results, skill_ref)
     results = apply_exclusion_rules(results, skill_ref)
     
-    return results
+    return draft_answer(query, results)
 ```
 
 ## Success Metrics
 
-**This skill improves RAG quality by:**
+**This skill improves OneStream answer quality by:**
 
 ### Precision Improvements
-- Eliminates false positives from semantic similarity (Cube vs Cube View)
+- Eliminates false positives from loose term matching (Cube vs Cube View)
 - Reduces irrelevant results by 60-80%
 - Prevents terminology confusion (View, Profile, Rule)
 
@@ -340,7 +330,7 @@ Result: ✓ PASS - Forms docs (Data Collection), not Cube Views (Presentation)
 
 **Source Analysis:**
 - Curated from public OneStream documentation patterns, developer guidance, and recurring agent failure modes
-- Designed to work with official web sources or any documentation index
+- Designed to work with OneStream reference documents and official public sources
 - Version-sensitive details should be validated against the user's OneStream version
 
 ## FAQs
@@ -367,12 +357,12 @@ Result: ✓ PASS - Forms docs (Data Collection), not Cube Views (Presentation)
 ### Q: What if my query isn't covered?
 **A:** The skill is designed to handle 95%+ of OneStream queries. For edge cases:
 1. Try `9-retrieval-rules.md` (full rule engine)
-2. Fall back to standard semantic search
+2. Fall back to official OneStream documentation search
 3. Note the gap for future skill updates
 
 ## Support & Contributions
 
-**Created by:** Curated OneStream domain-intelligence patterns for public-source research and retrieval-augmented agents
+**Created by:** Curated OneStream domain-intelligence patterns for agents using OneStream reference documents and public sources
 
 **For issues:**
 1. Check if query pattern is in `0-quick-reference.md`
@@ -388,10 +378,10 @@ Result: ✓ PASS - Forms docs (Data Collection), not Cube Views (Presentation)
 
 ## License
 
-This skill package synthesizes public OneStream concepts into structured domain intelligence for retrieval and research workflows. Use in accordance with OneStream licensing terms.
+This skill package synthesizes public OneStream concepts into structured domain intelligence for AI agents and research workflows. Use in accordance with OneStream licensing terms.
 
 ---
 
 **Start with `SKILL.md` for complete overview, then use `0-quick-reference.md` for 80% of queries.**
 
-**Transform your OneStream RAG from keyword matching to intelligent domain-aware retrieval.**
+**Help your AI agent move from keyword matching to domain-aware OneStream answers.**

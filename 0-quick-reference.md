@@ -13,10 +13,10 @@ Use the best available evidence in this order:
 1. Exact API/member reference, if the query names a method, class, property, or enum.
 2. Official OneStream documentation for product behavior and configuration.
 3. OneStream Developer Portal for Business Rule standards and extensibility guidance.
-4. A configured documentation index, if the agent has one.
+4. Additional OneStream reference documents available to the agent.
 5. Public community or partner examples only as secondary implementation hints.
 
-If no documentation index is available, load `10-public-web-resources.md` and use official web search before answering.
+If the loaded reference documents do not answer the question, load `10-public-web-resources.md` and use official web search before answering.
 
 ---
 
@@ -46,10 +46,10 @@ Detect query type and apply appropriate expansion:
 
 1. Treat it as an API/rule-context question, not a concept-only question.
 2. Keep the user-facing concept intact (for example `Cube View`) but search likely exact identifiers first when the task implies execution.
-3. For programmatic Cube View extraction, probe the `FdxExecuteCubeView` family before broad semantic search, then inspect adjacent variants such as time-pivot methods.
+3. For programmatic Cube View extraction, probe the `FdxExecuteCubeView` family before broad source search, then inspect adjacent variants such as time-pivot methods.
 4. Retrieve signature, return type, required context objects, named payload arguments, and example-hosting rule types before drafting sample code.
 5. If the question asks how to pass runtime parameters or dashboard prompts, inspect the signature field that actually carries the payload before broad concept search.
-6. If the question is about returned values, rows, columns, or whether a dimension comes from filters vs POV, retrieve Cube View result-set semantics too: rows, columns, Member Filters, POV, suppression, and parameter overrides.
+6. If the question is about returned values, rows, columns, or whether a dimension comes from filters vs POV, retrieve Cube View result-set behavior too: rows, columns, Member Filters, POV, suppression, and parameter overrides.
 7. Compare the asked dimension against explicit method override arguments; if the dimension is not an explicit argument, inspect the Cube View definition and passed parameters before inferring behavior.
 8. Pull companion identifiers used for rule context, parameter passing, or output-shape inspection when examples reference them (for example `DashboardDataSetArgs`, `NameValuePairs`, `NameValueFormatBuilder`, `FdxGetCubeViewOrDataUnitColumnList`, `FdxResultDataTable`).
 9. Keep runtime parameter payloads separate from entity/scenario/time filter arguments unless the query explicitly asks about both.
@@ -65,7 +65,7 @@ Detect query type and apply appropriate expansion:
 2. If the current turn is a short follow-up to a Business Rule signature discussion, carry forward the last resolved signature token, rule type, and example prototype from conversational context before searching.
 3. Retrieve the standard Business Rule `Main` prototype first to determine which parameters are stable vs rule-type-specific.
 4. If the query asks `what is it?` or compares code constructs, resolve the identifier role hierarchy explicitly: namespace -> containing type/class -> `Main` function -> parameter variable.
-5. Do not answer from bare `args` or `api` semantically first; pivot to the owning Business Rule type and its concrete `*Args` / `*Api` classes.
+5. Do not answer from bare `args` or `api` in isolation; pivot to the owning Business Rule type and its concrete `*Args` / `*Api` classes.
 6. If the rule type is named, exact-match its companion classes first (for example `FinanceRulesArgs`, `FinanceRulesApi`, `DashboardDataSetArgs`).
 7. If the rule type is not named, use the standard prototype plus one or two documented rule-type examples to establish the pattern before generalizing.
 8. Map bare signature tokens or follow-up references back to the resolved prototype slot before describing them (for example `args` -> parameter variable typed as `FinanceRulesArgs` in a Finance rule).
@@ -83,11 +83,11 @@ Detect query type and apply appropriate expansion:
 **If query mentions `GetDataCell("BR#[...]")`, `FinanceFunctionType.DataCell`, `DataCellArgs`, `FunctionName`, or `NameValuePairs` in a Cube View / Finance rule context:**
 
 1. Treat it as a cross-layer runtime-payload question spanning Cube View caller syntax and Finance rule execution context.
-2. Exact-match `FinanceFunctionType.DataCell`, `FinanceRulesArgs`, `DataCellArgs`, `FunctionName`, `NameValuePairs`, and `GetDataCell` before broad semantic search.
+2. Exact-match `FinanceFunctionType.DataCell`, `FinanceRulesArgs`, `DataCellArgs`, `FunctionName`, `NameValuePairs`, and `GetDataCell` before broad source search.
 3. Retrieve both sides of the handoff together: Cube View `BR#[BRName=..., FunctionName=..., Name=Value]` syntax and the Finance rule branch that reads `args.DataCellArgs`.
 4. Keep `args` -> `FinanceRulesArgs` -> `DataCellArgs` ownership explicit; do not describe `NameValuePairs` as a free-floating dictionary.
 5. When the question is `where did this value come from?`, distinguish values inherited from the current Cube View cell intersection vs dimensions explicitly overridden in `api.Data.GetDataCell(...)`.
-6. If the query is about output/rendering, retrieve `DataCell` return semantics before scalar `.CellAmount` patterns; do not assume the caller only needs a numeric amount.
+6. If the query is about output/rendering, retrieve `DataCell` return behavior before scalar `.CellAmount` patterns; do not assume the caller only needs a numeric amount.
 7. Keep Cube View call syntax, Finance rule branching, and expression evaluation separate; do not collapse them into one generic `parameter passing` explanation.
 8. Demote generic Cube View design/formatting results unless the query explicitly asks about layout.
 
@@ -97,7 +97,7 @@ Detect query type and apply appropriate expansion:
 
 **If query contains an exact CamelCase API/member name** (example: `FdxExecuteCubeView`):
 
-1. Search exact identifier hits in API docs first; do not start with broad semantic search.
+1. Search exact identifier hits in API docs first; do not start with broad source search.
 2. Retrieve the containing class or namespace, signature, return type, named payload arguments, and nearby methods/properties with the same prefix/suffix.
 3. Preserve embedded compound terms inside the identifier (for example `Cube View`) and pull that concept context too.
 4. If the query is about passing runtime parameters, inspect the exact signature field that carries the payload before reading broad concept docs.

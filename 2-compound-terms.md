@@ -1,8 +1,8 @@
 # Compound Terms & Atomic Concepts
 
-**Purpose:** Define technical terms that MUST be treated as atomic units and should never be split during semantic search.
+**Purpose:** Define technical terms that MUST be treated as atomic units and should never be split during source lookup.
 
-**Critical Rule:** These terms have specific meanings when together. Splitting them causes semantic confusion.
+**Critical Rule:** These terms have specific meanings when together. Splitting them causes concept confusion.
 
 ---
 
@@ -326,7 +326,7 @@ For quick reference during retrieval:
 ### When Processing Queries:
 
 1. **Scan for compound terms** using the list above
-2. **Treat as atomic** - do not split during semantic matching
+2. **Treat as atomic** - do not split during concept matching
 3. **Apply "Do NOT confuse with" rules** to exclude irrelevant results
 4. **Check context signals** if term has multiple meanings
 5. **Default to most common** interpretation if ambiguous
@@ -375,4 +375,4 @@ Before returning retrieval results, verify:
 
 ---
 
-**This module prevents the #1 cause of RAG semantic confusion: splitting atomic technical terms.**
+**This module prevents a common OneStream failure mode: splitting atomic technical terms.**

@@ -404,4 +404,4 @@ Does query mention "import" or "ETL"?
 
 ---
 
-**Disambiguation is critical for OneStream RAG accuracy. Always check before retrieval.**
+**Disambiguation is critical for accurate OneStream answers. Always check before retrieval.**

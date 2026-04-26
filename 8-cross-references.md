@@ -2,7 +2,7 @@
 
 **Purpose:** Tell an agent which nearby concepts to retrieve together, and which tempting concepts to avoid.
 
-Use this module when semantic search returns scattered results or when the query spans multiple OneStream layers.
+Use this module when source lookup returns scattered results or when the query spans multiple OneStream layers.
 
 ---
 
@@ -186,4 +186,3 @@ site:dev.onestream.com/docs OneStream "Finance Business Rules"
 ```
 
 Then widen only if official sources do not answer implementation details.
-

@@ -112,7 +112,7 @@ Check:
 
 ## Public Web Answering Pattern
 
-When no documentation index is available:
+When the loaded reference documents are not enough:
 
 1. Search official OneStream documentation first.
 2. Search the OneStream Developer Portal for Business Rule and extensibility topics.
@@ -121,4 +121,3 @@ When no documentation index is available:
 5. Clearly mark assumptions and version-sensitive steps.
 
 Use `10-public-web-resources.md` for source maps and search templates.
-

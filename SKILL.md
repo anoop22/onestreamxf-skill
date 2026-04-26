@@ -2,12 +2,12 @@
 
 ## Purpose
 
-This skill provides domain intelligence for OneStream XF to enable **intelligent retrieval** rather than simple semantic matching. It helps agents understand WHAT to retrieve, WHY, and HOW concepts relate - transforming keyword matching into comprehension-based retrieval.
+This skill gives AI agents practical domain intelligence for OneStream XF. It helps an agent decide which OneStream reference documents to consult, which concepts to keep together, and how to avoid common terminology traps.
 
 ## What This Skill Does
 
-**Solves the RAG Intelligence Gap:**
-- Prevents semantic confusion (e.g., retrieving "Cube" docs when user asks about "Cube View")
+**Solves the OneStream Context Problem:**
+- Prevents concept confusion (for example, using "Cube" docs when the user asks about "Cube View")
 - Understands architectural boundaries (when to cross layers vs. stay focused)
 - Recognizes prerequisite dependencies (what must be understood first)
 - Applies context-aware retrieval rules (what to include/exclude based on query type)
@@ -20,7 +20,7 @@ This skill provides domain intelligence for OneStream XF to enable **intelligent
 - Deciding what context to retrieve alongside matched documents
 - Resolving ambiguous technical terms
 - Determining if prerequisites are needed
-- Post-processing semantic search results
+- Reviewing reference-document results before answering
 
 **Module Selection Strategy:**
 1. Start with `0-quick-reference.md` for common patterns
@@ -89,19 +89,19 @@ Use this path when the query contains an exact identifier such as `FdxExecuteCub
 - Preserve embedded atomic terms such as `Cube View`
 - Use owner type, signature, and nearby APIs to infer documented purpose
 - If the question is about passing runtime parameters, expand exact lookup to the named payload argument and nearby helper/context identifiers (`*Args`, `NameValuePairs`, builder/formatter types) before broad concept search
-- Treat loose semantic matches as secondary evidence only
+- Treat loose keyword matches as secondary evidence only
 
 Also use this path when a concept query clearly implies programmatic execution even if the API name is missing.
 - Example: `sample code to extract data from a Cube View`
-- Promote likely exact identifiers from the concept/action pair before broad semantic search
+- Promote likely exact identifiers from the concept/action pair before broad source search
 - Retrieve rule context types, signatures, and return types before writing code
 - Use concept docs only to explain parameters, filters, and surrounding setup
 
-### For Public-Web-Only Answers
+### For Public Reference Answers
 
 **Read:** `0-quick-reference.md` + `6-query-patterns.md` + `10-public-web-resources.md`
 
-Use this path when no documentation index is available or when the answer needs public citations:
+Use this path when the agent is relying on OneStream reference documents and public citations:
 - Search official OneStream documentation and the OneStream Developer Portal first
 - Prefer exact API/member references over broad concept pages for code questions
 - Use community or partner sources only as secondary hints
@@ -111,7 +111,7 @@ Use this path when no documentation index is available or when the answer needs 
 ## Core Intelligence Concepts
 
 ### 1. Compound Terms (Don't Split)
-OneStream has 45+ multi-word technical terms that are **semantically atomic**:
+OneStream has 45+ multi-word technical terms that are **conceptually atomic**:
 - "Cube View" ≠ "Cube" (different architectural layers)
 - "Workflow Profile" ≠ generic "Profile" (specific configuration object)
 - "Member Formula" ≠ generic "Formula" (calculation type)
@@ -167,8 +167,7 @@ OneStream has 45+ multi-word technical terms that are **semantically atomic**:
 1. Exact API/member docs, if available
 2. Official OneStream product documentation
 3. OneStream Developer Portal for Business Rule/extensibility topics
-4. Available documentation index, if configured
-5. Public community/partner examples as secondary evidence
+4. Public community/partner examples as secondary evidence
 ```
 
 ### Post-Processing (After Retrieval)
@@ -187,10 +186,10 @@ OneStream has 45+ multi-word technical terms that are **semantically atomic**:
 "How do I create a Cube View?"
 
 ### Without Domain Intelligence
-Semantic search returns:
+Loose document matching may return:
 - Cube View documentation ✓
-- Cube documentation ✗ (semantic match on "Cube")
-- View documentation ✗ (semantic match on "View")
+- Cube documentation ✗ (matched only because of "Cube")
+- View documentation ✗ (matched only because of "View")
 - Mixed results from different layers ✗
 
 ### With Domain Intelligence
@@ -270,10 +269,10 @@ For complex architectural or multi-concept queries:
 
 ## Success Metrics
 
-This skill improves RAG quality by:
+This skill improves OneStream answer quality by:
 
 **Precision:**
-- Eliminates irrelevant semantic matches (Cube vs Cube View)
+- Eliminates irrelevant concept matches (Cube vs Cube View)
 - Reduces false positives from overloaded terminology
 
 **Recall:**
@@ -299,9 +298,9 @@ This skill improves RAG quality by:
 3. Re-validate retrieval rules
 4. Test with sample queries
 
-## Integration with RAG System
+## Agent Usage Flow
 
-This skill is designed to work alongside any retrieval system or public-web research workflow:
+This skill is designed to work out of the box when an agent can load these files and consult OneStream reference documents:
 
 ```
 User Query
@@ -314,7 +313,7 @@ User Query
     ↓
 [Expand query with prerequisites]
     ↓
-[Search documentation index and/or official public web]
+[Consult OneStream reference documents and official public sources]
     ↓
 [Apply inclusion/exclusion rules]
     ↓
@@ -322,7 +321,7 @@ User Query
     ↓
 [Add disambiguation notes]
     ↓
-Return Enhanced Results
+Return grounded OneStream answer
 ```
 
 ## Quick Reference Card

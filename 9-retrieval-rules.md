@@ -1,6 +1,6 @@
 # Complete Retrieval Rules - Synthesis Engine
 
-**Purpose:** Comprehensive rule engine synthesizing all domain intelligence for intelligent RAG retrieval.
+**Purpose:** Comprehensive rule engine synthesizing all domain intelligence for source-guided OneStream answers.
 
 **This is the master ruleset.** Use after quick-reference for complex queries requiring full rule application.
 
@@ -8,12 +8,12 @@
 
 ## Source Hierarchy
 
-Apply retrieval rules to whatever evidence source the agent has. Do not assume a specific retrieval backend exists.
+Apply retrieval rules to whatever OneStream reference documents and public sources the agent can access.
 
 1. **Exact API/member reference:** use first for method, class, enum, property, and signature questions.
 2. **Official OneStream documentation:** use first for product behavior, setup, security, workflow, Cube Views, dashboards, and design.
 3. **OneStream Developer Portal:** use for Business Rule standards, extensibility patterns, logging, versioning, and developer conventions.
-4. **Configured documentation index:** use if available, but keep source labels generic and cite where possible.
+4. **Additional OneStream reference documents:** use when available, and cite where possible.
 5. **Public community or partner examples:** use only as secondary implementation hints.
 
 If only public web access is available, load `10-public-web-resources.md`, run official domain-restricted searches first, and cite the sources used.
@@ -95,21 +95,21 @@ P5: SUPPLEMENTARY (Include if space permits)
 **Priority:** P1 (Structure), P2 (Components)
 
 **If query also shows developer intent** (`sample code`, `snippet`, `extract`, `programmatically`, `BRApi`, `DataTable`, `Dashboard DataSet`):
-- Promote exact API lookup before broad semantic search
+- Promote exact API lookup before broad source search
 - Verify signature and return type from API docs before writing code
 - Retrieve rule/context objects used by examples or calling patterns
 - Pull adjacent extraction variants/sibling methods
-- If the query asks how to pass runtime parameters or dashboard prompts, retrieve the exact signature plus the named payload argument and nearby helper identifiers (`*Args`, `NameValuePairs`, builder/formatter types) before broad semantic expansion
+- If the query asks how to pass runtime parameters or dashboard prompts, retrieve the exact signature plus the named payload argument and nearby helper identifiers (`*Args`, `NameValuePairs`, builder/formatter types) before broad source expansion
 - If the query mentions `GetDataCell("BR#[...]")`, `FinanceFunctionType.DataCell`, `DataCellArgs`, `FunctionName`, or `NameValuePairs`, retrieve the full caller/runtime chain together: Cube View `BR#[BRName=..., FunctionName=..., Name=Value]` syntax, Finance rule `Main` prototype, `FinanceRulesArgs` -> `DataCellArgs`, and the exact `DataCell` branch
 - Keep runtime parameter payloads separate from entity/scenario/time filter arguments unless the query explicitly asks about both
 - Distinguish caller payload keys from POV/filter arguments and from dimensions explicitly overridden inside `api.Data.GetDataCell(...)`
-- If the question is about what renders in the Cube View, prefer `DataCell` return semantics before scalar-only patterns
+- If the question is about what renders in the Cube View, prefer `DataCell` return behavior before scalar-only patterns
 - If the real question is output shape (`what values`, `which accounts`, `returned columns`, `POV or filters`), retrieve the Cube View surfaces that govern the result set: rows, columns, Member Filters, POV, suppression, and parameter overrides
 - Compare the asked dimension against explicit API override arguments before inferring whether it comes from method inputs, Cube View definition, or passed parameters
 - Pull helper APIs such as `FdxGetCubeViewOrDataUnitColumnList` and `FdxResultDataTable` when the user is really asking about returned schema or dimensional context
 - Do not invent a separate "POV-only" extract mode unless the API docs explicitly describe one
 - Demote design-only Cube View tuning unless the query explicitly asks about layout or formatting
-**Priority override:** P1 (Exact API + signature/result-shape evidence), P2 (Runtime context + override semantics), P3 (Cube View parameter semantics)
+**Priority override:** P1 (Exact API + signature/result-shape evidence), P2 (Runtime context + override behavior), P3 (Cube View parameter behavior)
 
 ---
 
@@ -128,7 +128,7 @@ P5: SUPPLEMENTARY (Include if space permits)
 - Resolve the construct hierarchy explicitly: namespace -> containing type/class -> `Main` function -> parameter variable
 - Anchor bare tokens to the resolved prototype slot before describing them (for example `args` is the parameter variable; `FinanceRulesArgs` is its type in a Finance rule)
 - Distinguish the parameter variable name from its declared type/class and the runtime argument value/object reference when that is the actual question
-- If the rule type is named, exact-match its companion classes before broad semantic search
+- If the rule type is named, exact-match its companion classes before broad source search
 - If the rule type is omitted, use one or two documented rule-type examples to establish the pattern and label them as examples
 - Pull representative members from the resolved `*Args` class only after the owner type is confirmed
 - Keep `BRApi`, rule-type `api`, and `args` distinct
@@ -480,10 +480,10 @@ P5: SUPPLEMENTARY (Include if space permits)
 - Business Rules: "VB.NET", "code", "BRApi"
 - Presentation: "report", "display", "dashboard"
 **Action:** Focus retrieval on detected layer(s)
-**Override:** If Presentation signals co-occur with developer intent (`sample code`, `snippet`, `extract`, `programmatically`, `BRApi`, `DataTable`, `Dashboard DataSet`), tag both Presentation and Business Rules, then run exact identifier lookup before broad semantic search.
-**Additional override:** If Business Rules signals co-occur with generic signature tokens (`args`, `api`, `globals`, `Main`, `SessionInfo`, `BRGlobals`), treat the query as a Business Rule signature/context question and resolve the owning `*Args` / `*Api` types before broad semantic search.
+**Override:** If Presentation signals co-occur with developer intent (`sample code`, `snippet`, `extract`, `programmatically`, `BRApi`, `DataTable`, `Dashboard DataSet`), tag both Presentation and Business Rules, then run exact identifier lookup before broad source search.
+**Additional override:** If Business Rules signals co-occur with generic signature tokens (`args`, `api`, `globals`, `Main`, `SessionInfo`, `BRGlobals`), treat the query as a Business Rule signature/context question and resolve the owning `*Args` / `*Api` types before broad source search.
 **Conversational follow-up override:** If the current turn is a short generic-programming follow-up (`what is a function parameter variable?`, `is that an argument or parameter?`, `what type is that?`) after a Business Rule signature discussion, inherit the last resolved signature token/rule type and treat it as a Business Rule signature/context question even if the new turn omits `args`, `api`, or `Main`.
-**DataCell override:** If Presentation signals co-occur with `BR#[`, `GetDataCell`, `FinanceFunctionType.DataCell`, `DataCellArgs`, `FunctionName`, or `NameValuePairs`, tag both Presentation and Business Rules, then retrieve the Cube View caller syntax plus the Finance rule runtime payload before broad semantic search.
+**DataCell override:** If Presentation signals co-occur with `BR#[`, `GetDataCell`, `FinanceFunctionType.DataCell`, `DataCellArgs`, `FunctionName`, or `NameValuePairs`, tag both Presentation and Business Rules, then retrieve the Cube View caller syntax plus the Finance rule runtime payload before broad source search.
 **Code-shape override:** If those tokens are paired with vocabulary such as `class`, `function`, `namespace`, `parameter`, `object`, or `what is this`, map the concrete signature element to its role in the prototype before retrieving generic programming explanations.
 
 ---
@@ -517,7 +517,7 @@ P5: SUPPLEMENTARY (Include if space permits)
 **Also scan for exact API/member identifiers that embed those terms:**
 - Example: `FdxExecuteCubeView` -> exact identifier + embedded `Cube View`
 **Action:** Treat compounds as atomic, preserve embedded atomic terms inside identifiers, and apply exclusion rules to generic token matches.
-**If the same query asks how to pass parameters or runtime values:** retrieve the exact signature plus the named payload argument and nearby helper identifiers (`*Args`, `NameValuePairs`, builder/formatter types) before broad semantic expansion, and do not let generic POV/filter matches substitute for that parameter-passing context unless explicitly requested.
+**If the same query asks how to pass parameters or runtime values:** retrieve the exact signature plus the named payload argument and nearby helper identifiers (`*Args`, `NameValuePairs`, builder/formatter types) before broad source expansion, and do not let generic POV/filter matches substitute for that parameter-passing context unless explicitly requested.
 
 ---
 
@@ -707,10 +707,10 @@ Before returning results:
 **Retrieval Phase:**
 - ✓ Exact lookup executed first for identifier queries
 - ✓ Signature-level payload arguments and helper identifiers added for parameter-passing questions
-- ✓ Cube View rows/columns/member-filter/POV semantics added for result-shape questions
+- ✓ Cube View rows/columns/member-filter/POV behavior added for result-shape questions
 - ✓ Semantic search executed
 - ✓ Results retrieved
-- ✓ Exact hits prioritized over loose semantic matches
+- ✓ Exact hits prioritized over loose keyword matches
 
 **Post-Processing Phase:**
 - ✓ Inclusion rules applied to results
@@ -729,4 +729,4 @@ Before returning results:
 
 ---
 
-**This rule engine transforms semantic search into intelligent domain-aware retrieval.**
+**This rule engine turns source lookup into domain-aware OneStream answering.**
