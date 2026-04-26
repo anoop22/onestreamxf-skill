@@ -1,3 +1,10 @@
+---
+name: onestreamxf
+description: Use this skill when answering OneStream XF or OneStream EPM questions, especially questions about Cube Views, dashboards, parameters, Business Rules, BRApi, workflow, data management, consolidation, dimensions, security, APIs, or which OneStream reference documents and public sources to consult.
+metadata:
+  short-description: Answer OneStream XF questions with source-guided domain rules
+---
+
 # OneStream XF Domain Intelligence Skill
 
 ## Purpose

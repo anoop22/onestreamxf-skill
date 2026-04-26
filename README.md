@@ -42,6 +42,25 @@ A modular skill package that helps AI agents answer OneStream XF questions from 
 2. Ensure the agent can consult OneStream reference documents or official public sources
 3. Tell the agent to start with `SKILL.md` for OneStream questions
 
+### For Codex
+
+Install the repo as a Codex skill, then restart Codex so the skill metadata is picked up:
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo anoop22/onestreamxf-skill \
+  --path . \
+  --name onestreamxf-skill
+```
+
+After restart, Codex can trigger the skill automatically when a prompt mentions OneStream XF, Cube Views, dashboards, Business Rules, BRApi, workflow, consolidation, data management, dimensions, or OneStream security. The skill metadata in `SKILL.md` tells Codex when to load the skill; the body of `SKILL.md` then points Codex to the focused modules it should read for the question.
+
+For example:
+
+```text
+Using the OneStreamXF skill, explain how dashboard parameters reach a Dashboard Data Set Business Rule that calls FdxExecuteCubeView.
+```
+
 ## Package Structure
 
 ```
