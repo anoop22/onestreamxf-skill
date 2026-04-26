@@ -42,6 +42,51 @@ A modular skill package that helps AI agents answer OneStream XF questions from 
 2. Ensure the agent can consult OneStream reference documents or official public sources
 3. Tell the agent to start with `SKILL.md` for OneStream questions
 
+### For Claude Code
+
+Claude Code auto-discovers skills from `~/.claude/skills/`. Clone this repo
+into that directory and the skill activates on the next session.
+
+```bash
+git clone https://github.com/anoop22/onestreamxf-skill.git \
+  ~/.claude/skills/onestreamxf
+```
+
+That's the entire setup — no config edits, no plugin manifest. The
+`SKILL.md` frontmatter (`name: onestreamxf`, `description: Use this skill
+when answering OneStream XF...`) is what Claude Code reads to decide when
+to surface the skill.
+
+**Verify it's loaded:** start a new Claude Code session and look for
+`onestreamxf` in the available-skills list, or just ask a OneStream
+question — the skill should be invoked automatically.
+
+**Manual invocation:** `/onestreamxf` or have Claude call it via the
+`Skill` tool with `skill: "onestreamxf"`.
+
+**Update later:**
+
+```bash
+cd ~/.claude/skills/onestreamxf && git pull
+```
+
+**Validation example.** I tested the installed skill with:
+
+```text
+How can Cube View data sets be exported in OneStream using Business Rules?
+```
+
+Claude Code (Opus 4.7) loaded `SKILL.md`, then per the skill's
+"Code-Snippet / Programmatic Access Shortcut" section pulled
+`0-quick-reference.md` and `7-domain-logic.md`. It anchored the answer on
+the `FdxExecuteCubeView` API family, identified Extender / Dashboard
+Data Set as the relevant Business Rule types, and — critically — kept
+the runtime parameter payload (`NameValuePairs nvbParams`) separate from
+the entity/scenario/time POV filter arguments, exactly as
+`7-domain-logic.md` requires. Without the skill, generic Cube
+documentation tends to outrank the exact API and the parameter-vs-POV
+distinction is missed.
+
 ### For Codex
 
 Install the repo as a Codex skill, then restart Codex so the skill metadata is picked up:
