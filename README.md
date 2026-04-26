@@ -61,6 +61,30 @@ For example:
 Using the OneStreamXF skill, explain how dashboard parameters reach a Dashboard Data Set Business Rule that calls FdxExecuteCubeView.
 ```
 
+### Codex Validation Example
+
+I validated the installed skill with this deliberately tricky query:
+
+```text
+In a Dashboard Data Set Business Rule, how should dashboard parameters be passed into FdxExecuteCubeView, and why should I not treat Entity/Scenario/Time filters as the same thing as runtime Cube View parameters?
+```
+
+Codex used the skill as follows:
+
+1. `SKILL.md` identified the query as an exact API / BRApi question because it mentions `FdxExecuteCubeView`.
+2. `0-quick-reference.md` routed the question to the programmatic Cube View extraction and exact API identifier shortcuts.
+3. `6-query-patterns.md` classified it as both a Programmatic/API question and a Runtime parameters question.
+4. `7-domain-logic.md` separated dashboard/Cube View runtime parameters from entity, scenario, and time filters.
+5. `9-retrieval-rules.md` required exact method evidence first, then Cube View output-shape context, then Dashboard Data Set / Business Rule context.
+
+Expected answer shape:
+
+- identify the Dashboard Data Set rule context first
+- exact-match `FdxExecuteCubeView` and inspect its signature
+- keep method filter arguments such as entity, scenario, and time separate from the parameter payload used for Cube View/dashboard runtime values
+- trace dashboard control or bound parameter values into the Business Rule `args` object, then into the key/value payload passed to the Cube View execution call
+- explain that Cube View rows, columns, POV, member filters, suppression, and parameter overrides together determine the resulting `DataTable`
+
 ## Package Structure
 
 ```
